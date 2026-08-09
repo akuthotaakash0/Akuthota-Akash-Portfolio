@@ -1,12 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
   const typedTarget = document.getElementById('typed-text');
   if (typedTarget && window.Typed) {
+    // Keep the rotating headline readable on every screen size.
+    typedTarget.textContent = '';
     new Typed('#typed-text', {
-      strings: ['Full Stack Learner', 'Java Developer', 'Python Developer', 'Problem Solver'],
-      typeSpeed: 55,
-      backSpeed: 32,
-      backDelay: 1200,
+      strings: [
+        'Full Stack Learner',
+        'Java Developer',
+        'Python Developer',
+        'Problem Solver',
+      ],
+      typeSpeed: 65,
+      backSpeed: 40,
+      backDelay: 1500,
+      startDelay: 250,
       loop: true,
+      smartBackspace: false,
+      showCursor: true,
+      cursorChar: '|',
+      autoInsertCss: true,
     });
   }
 
@@ -97,9 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
       try {
         const response = await fetch(endpoint, {
           method: 'POST',
-          headers: {
-            Accept: 'application/json',
-          },
+          headers: { Accept: 'application/json' },
           body: formData,
         });
 
