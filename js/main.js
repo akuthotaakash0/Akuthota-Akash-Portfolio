@@ -1,25 +1,50 @@
 document.addEventListener('DOMContentLoaded', () => {
   const typedTarget = document.getElementById('typed-text');
-  if (typedTarget && window.Typed) {
-    // Keep the rotating headline readable on every screen size.
+  if (typedTarget) {
+    // Reliable type/delete animation. Each title is shown completely before changing.
+    const titles = [
+      'Full Stack Learner',
+      'Java Developer',
+      'Python Developer',
+      'Problem Solver',
+    ];
+
+    let titleIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
     typedTarget.textContent = '';
-    new Typed('#typed-text', {
-      strings: [
-        'Full Stack Learner',
-        'Java Developer',
-        'Python Developer',
-        'Problem Solver',
-      ],
-      typeSpeed: 65,
-      backSpeed: 40,
-      backDelay: 1500,
-      startDelay: 250,
-      loop: true,
-      smartBackspace: false,
-      showCursor: true,
-      cursorChar: '|',
-      autoInsertCss: true,
-    });
+    typedTarget.style.display = 'inline-block';
+    typedTarget.style.minWidth = '16ch';
+
+    const typeTitle = () => {
+      const current = titles[titleIndex];
+      typedTarget.textContent = current.slice(0, charIndex);
+
+      if (!deleting && charIndex < current.length) {
+        charIndex += 1;
+        setTimeout(typeTitle, 75);
+        return;
+      }
+
+      if (!deleting) {
+        deleting = true;
+        setTimeout(typeTitle, 1800);
+        return;
+      }
+
+      if (charIndex > 0) {
+        charIndex -= 1;
+        setTimeout(typeTitle, 45);
+        return;
+      }
+
+      deleting = false;
+      titleIndex = (titleIndex + 1) % titles.length;
+      setTimeout(typeTitle, 300);
+    };
+
+    typeTitle();
   }
 
   const menuToggle = document.querySelector('.menu-toggle');
