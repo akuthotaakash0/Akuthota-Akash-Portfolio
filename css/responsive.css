@@ -64,14 +64,26 @@
     background: rgba(56, 189, 248, 0.1);
   }
 
-  .skills-grid {
+  .skills-grid,
+  .project-grid {
     grid-template-columns: 1fr;
   }
 
   .about-card,
   .contact-card,
+  .contact-form,
   .project-card {
     padding: 22px;
+  }
+
+  .timeline li {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .experience-top {
+    flex-direction: column;
+    gap: 8px;
   }
 }
 
@@ -110,5 +122,26 @@
 
   .photo-ring {
     width: min(290px, 86vw);
+  }
+
+  .back-to-top {
+    right: 14px;
+    bottom: 14px;
+    width: 42px;
+    height: 42px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
