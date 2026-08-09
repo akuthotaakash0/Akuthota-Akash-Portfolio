@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Akuthota Akash - Personal portfolio website showcasing projects, skills, education, achievements, and contact details.">
-    <meta name="keywords" content="Akuthota Akash, portfolio, web developer, frontend, Java, Python, projects">
+    <meta name="description" content="Akuthota Akash - Computer Science student portfolio showcasing projects, skills, education, achievements, and contact details.">
+    <meta name="keywords" content="Akuthota Akash, portfolio, web developer, Java, Python, HTML, CSS, JavaScript, DSA">
     <meta name="author" content="Akuthota Akash">
+    <meta name="theme-color" content="#0b1120">
+    <meta property="og:title" content="Akuthota Akash | Portfolio">
+    <meta property="og:description" content="Computer Science student portfolio showcasing projects, skills, education, and achievements.">
+    <meta property="og:type" content="website">
     <title>Akuthota Akash | Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,12 +25,12 @@
     <div class="bg-orb orb-2"></div>
 
     <header class="header" id="home">
-        <nav class="navbar">
+        <nav class="navbar" aria-label="Main navigation">
             <a class="brand" href="#home">Akash</a>
-            <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">
                 <span></span><span></span><span></span>
             </button>
-            <ul class="nav-links">
+            <ul class="nav-links" id="primary-navigation">
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -47,15 +51,17 @@
                     <a class="btn primary" href="#projects">View Projects</a>
                     <a class="btn secondary" href="#contact">Contact Me</a>
                 </div>
-                <div class="social-links">
-                    <a href="https://github.com/akuthotaakash0" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://www.linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://leetcode.com" target="_blank" rel="noreferrer" aria-label="LeetCode"><i class="fa-solid fa-code"></i></a>
+                <div class="social-links" aria-label="Social profiles">
+                    <a href="https://github.com/akuthotaakash0" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://leetcode.com" target="_blank" rel="noopener noreferrer" aria-label="LeetCode"><i class="fa-solid fa-code"></i></a>
                     <a href="mailto:your-email@example.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
                 </div>
             </div>
             <div class="hero-card">
-                <div class="photo-ring"><div class="photo-placeholder">AK</div></div>
+                <div class="photo-ring" aria-label="Akuthota Akash profile placeholder">
+                    <div class="photo-placeholder">AK</div>
+                </div>
                 <div class="mini-card">
                     <span>Full Stack Learner</span>
                     <span>Java • Python • HTML • CSS</span>
@@ -100,16 +106,16 @@
                 <article class="project-card">
                     <div class="project-icon"><i class="fa-solid fa-hospital"></i></div>
                     <h3>Smart Hospital Appointment Management System</h3>
-                    <p>A web-based appointment booking system with admin and user flows, built to simplify hospital scheduling and management.</p>
-                    <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Flask</span></div>
-                    <a href="https://github.com/akuthotaakash0/SmartHospitalAppointmentManagementSystem" target="_blank" rel="noreferrer">GitHub Repository</a>
+                    <p>A web-based appointment booking system with user and admin workflows for managing doctors, appointments, notifications, and hospital scheduling.</p>
+                    <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Flask</span><span>CSV</span></div>
+                    <a href="https://github.com/akuthotaakash0/SmartHospitalAppointmentManagementSystem" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
                 </article>
                 <article class="project-card project-placeholder">
                     <div class="project-icon"><i class="fa-solid fa-layer-group"></i></div>
-                    <h3>Portfolio Website</h3>
-                    <p>A responsive personal portfolio showcasing my skills, projects, education, achievements, and contact information.</p>
+                    <h3>Personal Portfolio</h3>
+                    <p>A responsive developer portfolio designed to present my skills, projects, education, achievements, and professional contact information.</p>
                     <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-                    <a href="#home">Back to Home</a>
+                    <a href="#home">View Portfolio</a>
                 </article>
             </div>
         </section>
@@ -130,7 +136,7 @@
             <div class="skills-grid">
                 <article class="skill-card"><h3>Problem Solving</h3><p>Regularly practicing coding problems and strengthening DSA fundamentals through Java and Python.</p></article>
                 <article class="skill-card"><h3>Project Expo</h3><p>Developed and presented a Smart Hospital Appointment Management System as an academic project.</p></article>
-                <article class="skill-card"><h3>GitHub</h3><p>Maintaining projects and building a public developer portfolio through Git and GitHub.</p><a href="https://github.com/akuthotaakash0" target="_blank" rel="noreferrer">View GitHub</a></article>
+                <article class="skill-card"><h3>GitHub</h3><p>Maintaining projects and building a public developer portfolio through Git and GitHub.</p><a href="https://github.com/akuthotaakash0" target="_blank" rel="noopener noreferrer">View GitHub</a></article>
                 <article class="skill-card"><h3>Continuous Learning</h3><p>Currently improving full-stack development, Java, Python, databases, and problem-solving skills.</p></article>
             </div>
         </section>
@@ -139,9 +145,12 @@
             <div class="section-heading"><span>Contact</span><h2>Let's Connect</h2></div>
             <div class="contact-grid">
                 <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
-                    <label for="name">Name</label><input id="name" name="name" type="text" placeholder="Your name" required>
-                    <label for="email">Email</label><input id="email" name="email" type="email" placeholder="Your email" required>
-                    <label for="message">Message</label><textarea id="message" name="message" rows="5" placeholder="Tell me about your idea" required></textarea>
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name" required>
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" autocomplete="email" placeholder="Your email" required>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Tell me about your idea" required></textarea>
                     <button class="btn primary" type="submit">Send Message</button>
                 </form>
                 <div class="contact-card">
@@ -152,8 +161,10 @@
         </section>
     </main>
 
-    <button class="scroll-top" id="scroll-top" aria-label="Scroll to top" title="Back to top">↑</button>
+    <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top" title="Back to top">↑</button>
 
-    <footer class="footer"><p>Designed &amp; Developed by Akuthota Akash</p></footer>
+    <footer class="footer">
+        <p>Designed &amp; Developed by Akuthota Akash</p>
+    </footer>
 </body>
 </html>
