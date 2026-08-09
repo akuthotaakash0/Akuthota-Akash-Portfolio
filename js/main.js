@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach((section) => sectionObserver.observe(section));
   }
 
-  const scrollTop = document.querySelector('.scroll-top');
+  const scrollTop = document.getElementById('back-to-top');
   if (scrollTop) {
     const updateScrollButton = () => {
       scrollTop.classList.toggle('show', window.scrollY > 500);
@@ -68,6 +68,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     scrollTop.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  const contactForm = document.getElementById('contact-form');
+  const formNote = document.getElementById('form-note');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const name = document.getElementById('name')?.value.trim() || '';
+      const email = document.getElementById('email')?.value.trim() || '';
+      const message = document.getElementById('message')?.value.trim() || '';
+      const subject = `Portfolio message from ${name}`;
+      const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+      const mailto = `mailto:akuthotaakash0@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      if (formNote) formNote.textContent = 'Opening your email app…';
+      window.location.href = mailto;
     });
   }
 });
