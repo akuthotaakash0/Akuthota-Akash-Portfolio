@@ -1,12 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
   const typedTarget = document.getElementById('typed-text');
   if (typedTarget) {
-    // Reliable type/delete animation. Each title is shown completely before changing.
     const titles = [
+      'Frontend Developer',
       'Full Stack Learner',
-      'Java Developer',
-      'Python Developer',
       'Problem Solver',
+      'Software Developer',
     ];
 
     let titleIndex = 0;
