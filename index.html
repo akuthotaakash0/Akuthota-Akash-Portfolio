@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Akuthota Akash - Personal portfolio website showcasing projects, skills, education, achievements, and contact details.">
+    <meta name="keywords" content="Akuthota Akash, portfolio, web developer, frontend, Java, Python, projects">
+    <meta name="author" content="Akuthota Akash">
     <title>Akuthota Akash | Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -200,9 +202,23 @@
                 <span>Contact</span>
                 <h2>Let's Connect</h2>
             </div>
-            <div class="contact-card">
-                <p>Email integration will be added in the next phase.</p>
-                <a class="btn primary" href="mailto:your-email@example.com">Send Email</a>
+            <div class="contact-grid">
+                <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" placeholder="Your name" required>
+
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" placeholder="Your email" required>
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Tell me about your idea" required></textarea>
+
+                    <button class="btn primary" type="submit">Send Message</button>
+                </form>
+                <div class="contact-card">
+                    <p>Use the form to send a message or reach out directly through my social links.</p>
+                    <a class="btn secondary" href="mailto:your-email@example.com">Email Me</a>
+                </div>
             </div>
         </section>
     </main>
