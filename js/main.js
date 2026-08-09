@@ -73,19 +73,58 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const contactForm = document.getElementById('contact-form');
   const formNote = document.getElementById('form-note');
+  const contactSubmit = document.getElementById('contact-submit');
+
   if (contactForm) {
-    contactForm.addEventListener('submit', (event) => {
+    contactForm.addEventListener('submit', async (event) => {
       event.preventDefault();
 
-      const name = document.getElementById('name')?.value.trim() || '';
-      const email = document.getElementById('email')?.value.trim() || '';
-      const message = document.getElementById('message')?.value.trim() || '';
-      const subject = `Portfolio message from ${name}`;
-      const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-      const mailto = `mailto:akuthotaakash0@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      if (!contactForm.checkValidity()) {
+        contactForm.reportValidity();
+        return;
+      }
 
-      if (formNote) formNote.textContent = 'Opening your email app…';
-      window.location.href = mailto;
+      const endpoint = contactForm.getAttribute('action');
+      const formData = new FormData(contactForm);
+      const name = String(formData.get('name') || '').trim();
+
+      if (formNote) formNote.textContent = 'Sending your message…';
+      if (contactSubmit) {
+        contactSubmit.disabled = true;
+        contactSubmit.textContent = 'Sending…';
+      }
+
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+          },
+          body: formData,
+        });
+
+        const data = await response.json().catch(() => ({}));
+
+        if (!response.ok || data.success === false) {
+          throw new Error(data.message || 'Unable to send the message.');
+        }
+
+        contactForm.reset();
+        if (formNote) {
+          formNote.textContent = `Message sent successfully${name ? `, ${name}` : ''}! Akash will receive it by email.`;
+          formNote.classList.add('success');
+        }
+      } catch (error) {
+        if (formNote) {
+          formNote.textContent = 'We could not send the message right now. Please try again in a moment or use the email button beside the form.';
+          formNote.classList.remove('success');
+        }
+      } finally {
+        if (contactSubmit) {
+          contactSubmit.disabled = false;
+          contactSubmit.textContent = 'Send Message';
+        }
+      }
     });
   }
 });
