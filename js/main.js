@@ -46,6 +46,44 @@ document.addEventListener('DOMContentLoaded', () => {
     typeTitle();
   }
 
+  const certificateGrid = document.querySelector('#certificates .skills-grid');
+  if (certificateGrid) {
+    const certificates = [
+      ['Python (Basic)', 'HackerRank', 'assets/python_basic certificate.pdf'],
+      ['Programming in Java', 'NPTEL', 'assets/JAVA NPTEL.pdf'],
+      ['Problem Solving through Programming in C', 'NPTEL', 'assets/PROGRAMMING IN C (NPTEL).pdf'],
+      ['Python Full Stack Development + Project', 'EduSkills Academy', 'assets/python full stack + project.pdf'],
+      ['Python Full Stack Development', 'EduSkills Academy', 'assets/PYTHON fullstack Certificate.pdf'],
+      ['Java Full Stack Development', 'EduSkills Academy', 'assets/java fullstack certificate.pdf'],
+      ['AI-ML Virtual Internship', 'EduSkills / AICTE', 'assets/AI-ML intenship certificate.pdf'],
+      ['Python Skill Up', 'GeeksforGeeks', 'assets/PYTHON SKILLUP GFG.pdf'],
+      ['500 Difficulty Rating', 'CodeChef', 'assets/akuthotaakash-500 difficulty rating(2).pdf'],
+    ];
+
+    certificateGrid.innerHTML = certificates.map(([title, issuer, file]) => `
+      <article class="skill-card certificate-card">
+        <div class="certificate-icon" aria-hidden="true">🏆</div>
+        <h3>${title}</h3>
+        <p>${issuer}</p>
+        <a class="certificate-link" href="${encodeURI(file)}" target="_blank" rel="noopener noreferrer">View Certificate ↗</a>
+      </article>
+    `).join('');
+
+    const certificateStyles = document.createElement('style');
+    certificateStyles.textContent = `
+      #certificates .skills-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .certificate-card { position: relative; display: flex; flex-direction: column; min-height: 220px; }
+      .certificate-icon { width: 52px; height: 52px; display: grid; place-items: center; border-radius: 14px; margin-bottom: 18px; background: linear-gradient(135deg, rgba(56,189,248,.18), rgba(167,139,250,.18)); border: 1px solid rgba(125,211,252,.18); font-size: 24px; }
+      .certificate-card h3 { margin-bottom: 10px; }
+      .certificate-card p { margin-bottom: 20px; color: #94a3b8; }
+      .certificate-link { margin-top: auto; color: #38bdf8; font-weight: 700; text-decoration: none; }
+      .certificate-link:hover { text-decoration: underline; }
+      @media (max-width: 900px) { #certificates .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+      @media (max-width: 600px) { #certificates .skills-grid { grid-template-columns: 1fr; } .certificate-card { min-height: 190px; } }
+    `;
+    document.head.appendChild(certificateStyles);
+  }
+
   const menuToggle = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
   if (menuToggle && navLinks) {
