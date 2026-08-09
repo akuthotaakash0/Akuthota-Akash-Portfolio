@@ -171,17 +171,18 @@
         <section class="section reveal" id="contact">
             <div class="section-heading"><span>Contact</span><h2>Let's Connect</h2></div>
             <div class="contact-grid">
-                <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+                <form class="contact-form" id="contact-form">
                     <label for="name">Name</label>
                     <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name" required>
                     <label for="email">Email</label>
                     <input id="email" name="email" type="email" autocomplete="email" placeholder="Your email" required>
                     <label for="message">Message</label>
                     <textarea id="message" name="message" rows="5" placeholder="Tell me about your idea" required></textarea>
-                    <button class="btn primary" type="submit">Send Message</button>
+                    <button class="btn primary" type="submit">Open Email</button>
+                    <p class="form-note" id="form-note" aria-live="polite">This opens your email app with the message prepared for Akash.</p>
                 </form>
                 <div class="contact-card">
-                    <p>Use the form to send a message or reach out directly through my social links.</p>
+                    <p>Use the form to prepare an email or reach out directly through my social links.</p>
                     <a class="btn secondary" href="mailto:akuthotaakash0@gmail.com">akuthotaakash0@gmail.com</a>
                     <div class="contact-links">
                         <a href="https://www.linkedin.com/in/akuthotaakash/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
