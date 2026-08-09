@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/assets/python%20full%20stack%20+%20project.pdf",
+      "destination": "/assets/certificate.pdf",
+      "permanent": false
+    },
+    {
+      "source": "/assets/python full stack + project.pdf",
+      "destination": "/assets/certificate.pdf",
+      "permanent": false
+    }
+  ]
+}
