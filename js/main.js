@@ -21,6 +21,72 @@ document.addEventListener('DOMContentLoaded', () => {
     typeTitle();
   }
 
+  const educationCard = document.querySelector('#education .education-card');
+  if (educationCard) {
+    const performance = document.createElement('div');
+    performance.className = 'academic-performance';
+    performance.innerHTML = `
+      <div class="performance-heading">
+        <div>
+          <span class="performance-kicker">Academic Performance</span>
+          <h3>Strong results, built through consistency.</h3>
+        </div>
+        <span class="performance-badge">2026 Update</span>
+      </div>
+      <div class="performance-grid">
+        <article class="performance-card performance-cgpa">
+          <div class="performance-top"><span>B.Tech CSE</span><span>Current</span></div>
+          <div class="performance-value">9.87 <small>/ 10</small></div>
+          <p>CGPA · Pursuing</p>
+          <div class="performance-bar"><span style="width:98.7%"></span></div>
+          <div class="performance-meta"><span>Latest CGPA</span><strong>9.87</strong></div>
+        </article>
+        <article class="performance-card performance-percent">
+          <div class="performance-top"><span>Intermediate</span><span>2024</span></div>
+          <div class="performance-value">97.6<small>%</small></div>
+          <p>Board Percentage</p>
+          <div class="performance-bar"><span style="width:97.6%"></span></div>
+          <div class="performance-meta"><span>Overall</span><strong>97.6%</strong></div>
+        </article>
+        <article class="performance-card performance-cgpa">
+          <div class="performance-top"><span>SSC</span><span>2022</span></div>
+          <div class="performance-value">9.8 <small>/ 10</small></div>
+          <p>CGPA</p>
+          <div class="performance-bar"><span style="width:98%"></span></div>
+          <div class="performance-meta"><span>Final CGPA</span><strong>9.8</strong></div>
+        </article>
+      </div>
+    `;
+    educationCard.appendChild(performance);
+
+    const academicStyles = document.createElement('style');
+    academicStyles.textContent = `
+      .academic-performance { margin-top: 30px; padding-top: 28px; border-top: 1px solid var(--border); }
+      .performance-heading { display:flex; align-items:flex-end; justify-content:space-between; gap:20px; margin-bottom:18px; }
+      .performance-kicker { color:var(--primary); font-size:.78rem; font-weight:800; text-transform:uppercase; letter-spacing:.1em; }
+      .performance-heading h3 { margin-top:6px; color:var(--text); font-family:'Poppins',sans-serif; font-size:1.2rem; }
+      .performance-badge { padding:7px 11px; border-radius:999px; color:#c8f2ff; background:rgba(56,189,248,.1); border:1px solid rgba(56,189,248,.2); font-size:.78rem; font-weight:700; white-space:nowrap; }
+      .performance-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+      .performance-card { position:relative; overflow:hidden; padding:20px; min-height:210px; border:1px solid rgba(148,163,184,.14); border-radius:18px; background:linear-gradient(145deg,rgba(15,23,42,.9),rgba(20,31,50,.7)); transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease; }
+      .performance-card::after { content:''; position:absolute; width:100px; height:100px; right:-45px; top:-45px; border-radius:50%; background:rgba(56,189,248,.08); filter:blur(2px); }
+      .performance-card:hover { transform:translateY(-4px); border-color:rgba(56,189,248,.4); box-shadow:0 16px 40px rgba(0,0,0,.22); }
+      .performance-top,.performance-meta { display:flex; justify-content:space-between; gap:12px; align-items:center; }
+      .performance-top span:first-child { color:var(--text); font-weight:700; }
+      .performance-top span:last-child { color:var(--muted); font-size:.78rem; }
+      .performance-value { margin-top:22px; color:#e8f7ff; font-family:'Poppins',sans-serif; font-size:2.45rem; line-height:1; font-weight:800; letter-spacing:-.04em; }
+      .performance-value small { color:var(--primary); font-size:1rem; letter-spacing:0; }
+      .performance-card p { margin-top:8px; color:var(--muted); font-size:.9rem; }
+      .performance-bar { height:7px; margin-top:22px; overflow:hidden; border-radius:999px; background:rgba(148,163,184,.12); }
+      .performance-bar span { display:block; height:100%; border-radius:inherit; background:linear-gradient(90deg,var(--primary),#8b5cf6); transform-origin:left; animation:performanceGrow 1.1s ease-out both; }
+      .performance-meta { margin-top:10px; color:var(--muted); font-size:.78rem; }
+      .performance-meta strong { color:var(--text); }
+      @keyframes performanceGrow { from { transform:scaleX(0); } to { transform:scaleX(1); } }
+      @media (max-width:900px) { .performance-grid { grid-template-columns:1fr; } .performance-card { min-height:190px; } }
+      @media (max-width:600px) { .performance-heading { align-items:flex-start; flex-direction:column; } .performance-value { font-size:2.2rem; } }
+    `;
+    document.head.appendChild(academicStyles);
+  }
+
   const certificateGrid = document.querySelector('#certificates .skills-grid');
   if (certificateGrid) {
     const certificates = [
