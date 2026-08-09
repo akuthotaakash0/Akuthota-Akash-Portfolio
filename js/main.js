@@ -41,4 +41,33 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     reveals.forEach((section) => section.classList.add('visible'));
   }
+
+  const sections = document.querySelectorAll('main section[id], header[id]');
+  const navItems = document.querySelectorAll('.nav-links a');
+  if ('IntersectionObserver' in window && sections.length && navItems.length) {
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        navItems.forEach((item) => item.classList.remove('active'));
+        const activeLink = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+        if (activeLink) activeLink.classList.add('active');
+      });
+    }, { rootMargin: '-30% 0px -55% 0px', threshold: 0 });
+
+    sections.forEach((section) => sectionObserver.observe(section));
+  }
+
+  const scrollTop = document.querySelector('.scroll-top');
+  if (scrollTop) {
+    const updateScrollButton = () => {
+      scrollTop.classList.toggle('show', window.scrollY > 500);
+    };
+
+    window.addEventListener('scroll', updateScrollButton, { passive: true });
+    updateScrollButton();
+
+    scrollTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 });
