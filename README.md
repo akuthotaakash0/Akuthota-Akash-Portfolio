@@ -52,7 +52,7 @@ A responsive portfolio website showcasing my skills, projects, education, intern
 
 ## Education
 
-- **B.Tech — Computer Science and Engineering** — Pursuing
+- **B.Tech — Computer Science and Engineering** — Pursuing · **Current CGPA: 7.99**
 - **Intermediate:** 97.6%
 - **SSC:** 9.8 CGPA
 
