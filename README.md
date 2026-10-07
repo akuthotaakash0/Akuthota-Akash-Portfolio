@@ -19,8 +19,8 @@ The website presents my education, technical skills, projects, experience, achie
 ## Highlights
 
 - Responsive portfolio for desktop, tablet, and mobile
-- Modern dark-themed UI with animated sections
-- Featured projects with GitHub and live links
+- Polished light/dark theme with smooth responsive UI
+- Featured project with GitHub repository link
 - Downloadable resume
 - Certificate access
 - GitHub, LinkedIn, LeetCode, CodeChef and GeeksforGeeks profiles
@@ -43,12 +43,6 @@ A web-based hospital appointment platform built with Flask and CSV-backed data s
 **Features:** User authentication, appointment booking, doctor management, admin dashboard, notifications.
 
 **Repository:** https://github.com/akuthotaakash0/SmartHospitalAppointmentManagementSystem
-
-### Personal Portfolio
-
-A responsive portfolio website showcasing my skills, projects, education, internship, achievements, certificates, coding profiles and contact details.
-
-**Live:** https://akuthotaakash.vercel.app
 
 ## Education
 
