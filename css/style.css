@@ -1497,3 +1497,35 @@ html[data-theme="dark"] .performance-card{background:linear-gradient(145deg,rgba
 html[data-theme="dark"] .performance-heading h3,html[data-theme="dark"] .performance-top span:first-child,html[data-theme="dark"] .performance-meta strong{color:#f1f5f9}
 html[data-theme="dark"] .certificate-card p{color:#94a3b8}
 @media(max-width:760px){html[data-theme="dark"] .nav-links{background:rgba(9,14,29,.97);border-color:rgba(139,92,246,.20)}}
+
+
+/* ===== Final polish: smooth theme transitions + elegant toggle ===== */
+html,body,.navbar,.about-card,.contact-card,.project-card,.skill-card,.contact-form,.experience-card,.mini-card,.contact-links a,.btn.secondary,.back-to-top,.theme-toggle,.performance-card{
+  transition:background-color .35s ease,border-color .35s ease,color .35s ease,box-shadow .35s ease;
+}
+.theme-toggle{
+  flex:0 0 auto;
+  min-width:88px;
+  height:40px;
+  padding:0 13px;
+  border-radius:12px;
+  gap:8px;
+  font-size:.76rem;
+  letter-spacing:.01em;
+}
+.theme-toggle .theme-icon{
+  display:grid;
+  place-items:center;
+  width:22px;height:22px;
+  border-radius:8px;
+  background:rgba(91,92,226,.08);
+}
+html[data-theme="dark"] .theme-toggle .theme-icon{background:rgba(139,92,246,.14)}
+html[data-theme="dark"] .section:nth-child(even)::before{display:block}
+@media(max-width:1100px){
+  .nav-links{gap:18px}
+}
+@media(max-width:900px){
+  .navbar{gap:10px}
+  .theme-toggle{margin-left:auto}
+}
