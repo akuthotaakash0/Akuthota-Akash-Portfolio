@@ -1,4 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+  // Light / dark theme switcher
+  const themeToggle = document.getElementById('theme-toggle');
+  const savedTheme = localStorage.getItem('portfolio-theme');
+  const applyTheme = (theme) => {
+    document.documentElement.setAttribute('data-theme', theme);
+    if (themeToggle) {
+      const dark = theme === 'dark';
+      themeToggle.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+      themeToggle.setAttribute('title', dark ? 'Switch to light theme' : 'Switch to dark theme');
+      themeToggle.innerHTML = dark ? '<span class="theme-icon" aria-hidden="true">☀</span><span class="theme-label">Light</span>' : '<span class="theme-icon" aria-hidden="true">☾</span><span class="theme-label">Dark</span>';
+    }
+  };
+  applyTheme(savedTheme === 'dark' ? 'dark' : 'light');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+      localStorage.setItem('portfolio-theme', next);
+    });
+  }
+
   const typedTarget = document.getElementById('typed-text');
   if (typedTarget) {
     const titles = ['Frontend Developer', 'Full Stack Learner', 'Problem Solver', 'Software Developer'];
