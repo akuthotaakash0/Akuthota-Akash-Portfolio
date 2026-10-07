@@ -185,7 +185,6 @@
   .nav-links a { display: block; width: 100%; padding: 13px 12px; border-radius: 12px; }
   .nav-links a:hover, .nav-links a.active { background: #eef2ff; color: #4f46e5; }
 }
-html[data-theme="dark"] @media (min-width: 761px) and (max-width: 900px) {}
 @media (min-width: 761px) and (max-width: 900px) {
   html[data-theme="dark"] .nav-links {
     background: rgba(9,14,29,.97);
