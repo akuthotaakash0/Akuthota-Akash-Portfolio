@@ -1460,3 +1460,40 @@ body::after{
   }
   .photo-ring{width:min(300px,78vw)}
 }
+
+
+/* ===== User-selectable Light / Dark Theme ===== */
+.theme-toggle{
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  min-width:82px;height:38px;padding:0 12px;border-radius:999px;
+  border:1px solid rgba(91,92,226,.14);background:rgba(255,255,255,.82);
+  color:#475569;font:700 .78rem Inter,sans-serif;cursor:pointer;
+  box-shadow:0 8px 22px rgba(57,65,120,.08);transition:all .25s ease;
+}
+.theme-toggle:hover{transform:translateY(-2px);border-color:rgba(91,92,226,.28);box-shadow:0 12px 28px rgba(57,65,120,.13);color:#4f46e5}
+.theme-icon{font-size:1rem;line-height:1}
+@media(max-width:900px){.theme-toggle{margin-left:auto;margin-right:10px}.navbar{display:flex;align-items:center}.menu-toggle{order:3}}
+
+html[data-theme="dark"] body{
+  color:#f8fafc;
+  background:radial-gradient(circle at 8% 5%,rgba(124,58,237,.22),transparent 25%),radial-gradient(circle at 92% 8%,rgba(34,211,238,.16),transparent 24%),linear-gradient(145deg,#080b18 0%,#0b1020 52%,#08131e 100%);
+}
+html[data-theme="dark"] body::before{background-image:linear-gradient(rgba(148,163,184,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.025) 1px,transparent 1px)}
+html[data-theme="dark"] .navbar{background:rgba(9,14,29,.84);border-color:rgba(148,163,184,.14);box-shadow:0 16px 45px rgba(0,0,0,.25)}
+html[data-theme="dark"] .nav-links a{color:#94a3b8}html[data-theme="dark"] .nav-links a:hover,html[data-theme="dark"] .nav-links a.active{color:#fff;background:rgba(139,92,246,.10)}
+html[data-theme="dark"] .theme-toggle{background:rgba(15,23,42,.82);border-color:rgba(139,92,246,.22);color:#e2e8f0}
+html[data-theme="dark"] .hero h1,html[data-theme="dark"] .section-heading h2{color:#f8fafc}
+html[data-theme="dark"] .hero-text,html[data-theme="dark"] .section-heading p{color:#94a3b8}
+html[data-theme="dark"] .eyebrow{color:#c4b5fd;background:rgba(124,58,237,.10);border-color:rgba(167,139,250,.20)}
+html[data-theme="dark"] .hero h2{color:#67e8f9}
+html[data-theme="dark"] .btn.secondary,html[data-theme="dark"] .contact-links a{color:#e2e8f0;background:rgba(15,23,42,.60);border-color:rgba(148,163,184,.16)}
+html[data-theme="dark"] .mini-card,html[data-theme="dark"] .about-card,html[data-theme="dark"] .contact-card,html[data-theme="dark"] .project-card,html[data-theme="dark"] .skill-card,html[data-theme="dark"] .contact-form,html[data-theme="dark"] .experience-card{color:#94a3b8;background:rgba(13,20,37,.82);border-color:rgba(148,163,184,.13);box-shadow:0 20px 55px rgba(0,0,0,.22)}
+html[data-theme="dark"] .about-info h3,html[data-theme="dark"] .about-info strong,html[data-theme="dark"] .skill-card h3,html[data-theme="dark"] .project-card h3,html[data-theme="dark"] .timeline h3,html[data-theme="dark"] .experience-top h3,html[data-theme="dark"] .contact-form label{color:#f1f5f9}
+html[data-theme="dark"] .section:nth-child(even)::before{background:linear-gradient(135deg,rgba(124,58,237,.035),rgba(34,211,238,.025));border-color:rgba(139,92,246,.05)}
+html[data-theme="dark"] .contact-form input,html[data-theme="dark"] .contact-form textarea{background:rgba(2,6,23,.48);border-color:rgba(148,163,184,.15);color:#f8fafc}
+html[data-theme="dark"] .back-to-top{background:rgba(15,23,42,.88);color:#e2e8f0;border-color:rgba(139,92,246,.22)}
+html[data-theme="dark"] .footer{color:#64748b;background:rgba(124,58,237,.025)}
+html[data-theme="dark"] .performance-card{background:linear-gradient(145deg,rgba(15,23,42,.9),rgba(20,31,50,.7))}
+html[data-theme="dark"] .performance-heading h3,html[data-theme="dark"] .performance-top span:first-child,html[data-theme="dark"] .performance-meta strong{color:#f1f5f9}
+html[data-theme="dark"] .certificate-card p{color:#94a3b8}
+@media(max-width:760px){html[data-theme="dark"] .nav-links{background:rgba(9,14,29,.97);border-color:rgba(139,92,246,.20)}}
