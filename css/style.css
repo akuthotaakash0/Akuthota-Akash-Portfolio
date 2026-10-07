@@ -536,3 +536,44 @@ body::after{
     transition-duration:.01ms !important;
   }
 }
+
+
+/* ===== Section Heading Alignment Fix ===== */
+.section-heading{
+  display:block;
+  text-align:left;
+}
+.section-heading > span{
+  display:block;
+  width:max-content;
+  margin-bottom:8px;
+  line-height:1.2;
+  padding:0;
+  background:none;
+  border:0;
+}
+.section-heading h2{
+  display:block;
+  width:max-content;
+  margin-top:0;
+  font-size:clamp(2rem,4vw,2.7rem);
+  line-height:1.1;
+}
+.section-heading h2::after{
+  content:'';
+  display:block;
+  width:78px;
+  height:4px;
+  margin-top:12px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#4f46e5,#7c3aed,#06b6d4);
+}
+.section-heading p{
+  margin-top:14px;
+  color:#64748b;
+  max-width:720px;
+  line-height:1.7;
+}
+@media (max-width:760px){
+  .section-heading h2{font-size:2rem}
+}
