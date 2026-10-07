@@ -159,3 +159,39 @@
     color:#4f46e5;
   }
 }
+
+
+/* Compact tablet navigation: prevent the full nine-item menu from crowding the theme switcher. */
+@media (min-width: 761px) and (max-width: 900px) {
+  .navbar { position: relative; }
+  .menu-toggle { display: inline-block; order: 3; }
+  .nav-links {
+    position: absolute;
+    top: calc(100% + 14px);
+    right: 0;
+    left: 0;
+    flex-direction: column;
+    gap: 0;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: rgba(255,255,255,.97);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 18px 40px rgba(30,41,59,.12);
+    display: none;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links li { width: 100%; }
+  .nav-links a { display: block; width: 100%; padding: 13px 12px; border-radius: 12px; }
+  .nav-links a:hover, .nav-links a.active { background: #eef2ff; color: #4f46e5; }
+}
+html[data-theme="dark"] @media (min-width: 761px) and (max-width: 900px) {}
+@media (min-width: 761px) and (max-width: 900px) {
+  html[data-theme="dark"] .nav-links {
+    background: rgba(9,14,29,.97);
+    border-color: rgba(139,92,246,.20);
+    box-shadow: 0 18px 45px rgba(0,0,0,.28);
+  }
+  html[data-theme="dark"] .nav-links a:hover,
+  html[data-theme="dark"] .nav-links a.active { background: rgba(139,92,246,.10); color: #fff; }
+}
